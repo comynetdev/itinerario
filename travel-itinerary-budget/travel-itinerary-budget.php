@@ -123,8 +123,7 @@ add_action('wp_ajax_tic_mostrar_formulario_vuelos', function() { // No necesitam
 
 // Handler para usuarios NO registrados (nopriv)
 add_action('wp_ajax_nopriv_tic_mostrar_formulario_vuelos', function() {
-    error_log('DEBUG: Entrando en el handler wp_ajax_nopriv_tic_mostrar_formulario_vuelos'); // Log para verificar entrada
-
+    // Log de depuración eliminado
     // Restaurar lógica original
     $tic_database = new TIC_Database();
     $tic_security = new TIC_Security();

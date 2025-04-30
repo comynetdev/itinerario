@@ -1,9 +1,5 @@
 /* administracion de itinerarios */
 .tic-itineraries-management {
-  font: 1.8em "typewriter", sans-serif;
-}
-/* Contenedor del Formulario */
-.tic-form-container {
   width: 100%;
   max-width: 1200px;
   margin: auto;
@@ -12,8 +8,34 @@
   border-radius: 8px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
+/* Menu de navegacion entre modulos**/
+.tic-module-navigation ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.tic-module-navigation li {
+  float: left;
+}
+.tic-module-navigation li a {
+  display: block;
+  padding: 8px;
+  background-color: #dddddd;
+}
+
+/* Contenedor del Formulario */
+.tic-form-content {
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
 /* Contenedores flexibles */
-.tic-flexFields {
+.tic-form-flexFields {
   display: flex;
   gap: 20px;
   margin-bottom: 20px;
@@ -33,19 +55,6 @@
   margin-bottom: 8px;
   color: #555;
 }
-/* Botones */
-.tic-button {
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  cursor: pointer;
-  padding: 12px 20px;
-  margin-top: 10px;
-}
-
-.tic-button:hover {
-  background-color: #45a049;
-}
 
 .tic-form-group input[type="text"],
 .tic-form-group input[type="number"],
@@ -54,6 +63,28 @@
   padding: 8px;
   border: 1px solid #ccc;
   box-sizing: border-box;
+}
+
+/* Botones */
+.tic-button {
+  background-color: #e1ecf4;
+  color: #39739d;
+  border: 1px solid rgba(27, 31, 35, .15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 10px;
+  cursor: pointer;
+  display: inline-block;
+  cursor: pointer;
+  padding: 6px 16px;
+}
+
+.tic-button:hover {
+  background-color: #b3d3ea;
+  color: #2c5777;
 }
 
 .tic-table {

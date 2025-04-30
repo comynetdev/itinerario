@@ -16,39 +16,42 @@ $itinerario_id = get_query_var('tic_itinerario_id_form', 0);
 
 <h3>Información de Vuelo</h3>
 
-<form id="tic-flights-form">
+<form id="tic-flights-form" class="tic-form-content">
     <?php wp_nonce_field('tic_guardar_vuelo_nonce', 'nonce'); ?>
     <input type="hidden" name="action" value="tic_guardar_vuelo">
     <input type="hidden" name="itinerario_id" value="<?php echo esc_attr($itinerario_id); // Ahora usa el valor de get_query_var ?>">
 
-    <div class="tic-form-group">
-        <label for="origen">Origen:</label>
-        <input type="text" id="origen" name="origen" required>
-    </div>
+    <div class="tic-form-flexFields">
+        <div class="tic-form-group">
+            <label for="origen">Origen:</label>
+            <input type="text" id="origen" name="origen" required>
+        </div>
 
-    <div class="tic-form-group">
-        <label for="destino">Destino:</label>
-        <input type="text" id="destino" name="destino" required>
-    </div>
+        <div class="tic-form-group">
+            <label for="destino">Destino:</label>
+            <input type="text" id="destino" name="destino" required>
+        </div>
 
-    <div class="tic-form-group">
-        <label for="linea_aerea">Línea Aérea:</label>
-        <input type="text" id="linea_aerea" name="linea_aerea">
+        <div class="tic-form-group">
+            <label for="linea_aerea">Línea Aérea:</label>
+            <input type="text" id="linea_aerea" name="linea_aerea">
+        </div>
     </div>
+    <div class="tic-form-flexFields">
+        <div class="tic-form-group">
+            <label for="numero_vuelo">Número de Vuelo:</label>
+            <input type="text" id="numero_vuelo" name="numero_vuelo">
+        </div>
 
-    <div class="tic-form-group">
-        <label for="numero_vuelo">Número de Vuelo:</label>
-        <input type="text" id="numero_vuelo" name="numero_vuelo">
-    </div>
+        <div class="tic-form-group">
+            <label for="fecha_hora_salida">Fecha y Hora de Salida:</label>
+            <input type="datetime-local" id="fecha_hora_salida" name="fecha_hora_salida">
+        </div>
 
-    <div class="tic-form-group">
-        <label for="fecha_hora_salida">Fecha y Hora de Salida:</label>
-        <input type="datetime-local" id="fecha_hora_salida" name="fecha_hora_salida">
-    </div>
-
-    <div class="tic-form-group">
-        <label for="fecha_hora_llegada">Fecha y Hora de Llegada:</label>
-        <input type="datetime-local" id="fecha_hora_llegada" name="fecha_hora_llegada">
+        <div class="tic-form-group">
+            <label for="fecha_hora_llegada">Fecha y Hora de Llegada:</label>
+            <input type="datetime-local" id="fecha_hora_llegada" name="fecha_hora_llegada">
+        </div>
     </div>
 
     <div class="tic-form-group">
@@ -65,36 +68,37 @@ $itinerario_id = get_query_var('tic_itinerario_id_form', 0);
     </div>
     <!-- Campos de escala hardcodeados eliminados. Se manejan dinámicamente con JS -->
 
-    <div class="tic-form-group">
-        <label for="precio_persona">Precio por Persona:</label>
-        <input type="number" id="precio_persona" name="precio_persona" step="0.01" required>
-    </div>
+    <div class="tic-form-flexFields">
+        <div class="tic-form-group">
+            <label for="precio_persona">Precio por Persona:</label>
+            <input type="number" id="precio_persona" name="precio_persona" step="0.01" required>
+        </div>
 
-    <div class="tic-form-group">
-        <label for="moneda_precio">Moneda del Precio:</label>
-        <input type="text" id="moneda_precio" name="moneda_precio" value="USD" maxlength="3" required>
-    </div>
+        <div class="tic-form-group">
+            <label for="moneda_precio">Moneda del Precio:</label>
+            <input type="text" id="moneda_precio" name="moneda_precio" value="USD" maxlength="3" required>
+        </div>
 
-    <div class="tic-form-group">
-        <label for="moneda_usuario">Moneda de Preferencia:</label>
-        <input type="text" id="moneda_usuario" name="moneda_usuario" value="USD" maxlength="3" required>
-    </div>
+        <div class="tic-form-group">
+            <label for="moneda_usuario">Moneda de Preferencia:</label>
+            <input type="text" id="moneda_usuario" name="moneda_usuario" value="USD" maxlength="3" required>
+        </div>
 
-    <div class="tic-form-group">
-        <label for="numero_personas">Número de Personas:</label>
-        <input type="number" id="numero_personas" name="numero_personas" value="1" min="1" required>
-    </div>
+        <div class="tic-form-group">
+            <label for="numero_personas">Número de Personas:</label>
+            <input type="number" id="numero_personas" name="numero_personas" value="1" min="1" required>
+        </div>
 
-    <div class="tic-form-group">
-        <label for="tipo_de_cambio">Tipo de Cambio:</label>
-        <input type="number" id="tipo_de_cambio" name="tipo_de_cambio" step="0.01" value="1.00" required>
-    </div>
+        <div class="tic-form-group">
+            <label for="tipo_de_cambio">Tipo de Cambio:</label>
+            <input type="number" id="tipo_de_cambio" name="tipo_de_cambio" step="0.01" value="1.00" required>
+        </div>
 
-    <div class="tic-form-group">
-        <label for="codigo_reserva">Código de Reserva:</label>
-        <input type="text" id="codigo_reserva" name="codigo_reserva">
+        <div class="tic-form-group">
+            <label for="codigo_reserva">Código de Reserva:</label>
+            <input type="text" id="codigo_reserva" name="codigo_reserva">
+        </div>
     </div>
-
     <button type="button" id="tic-guardar-vuelo-btn" class="button button-primary">Guardar Vuelo</button>
 </form>
 

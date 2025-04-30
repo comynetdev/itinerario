@@ -25,7 +25,7 @@ jQuery(document).ready(function($) {
       escalaCount++;
       var escalaIndex = escalaCount - 1;
       var escalaHtml = `
-          <div class="escala-item">
+          <div class="escala-item tic-form-flexFields">
               <h4>Escala ${escalaCount}</h4>
               <div class="tic-form-group">
                   <label for="aeropuerto_escala_${escalaIndex}">Aeropuerto:</label>
@@ -38,9 +38,9 @@ jQuery(document).ready(function($) {
               <div class="tic-form-group">
                   <label for="fecha_hora_salida_escala_${escalaIndex}">Fecha y Hora de Salida:</label>
                   <input type="datetime-local" id="fecha_hora_salida_escala_${escalaIndex}" name="escalas[${escalaIndex}][salida]">
-              </div>
+              </div>            
               <button type="button" class="remove-escala-btn button">Eliminar Escala</button>
-          </div>
+          </div>  
       `;
       console.log('HTML de escala creado:', escalaHtml); // Agregar este log
       $('#escalas-wrapper').append(escalaHtml);

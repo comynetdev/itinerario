@@ -46,7 +46,7 @@ global $tic_flights; // Aseguramos que la instancia de la clase TIC_Flights est√
                 <label for="new_itinerary_name">Nombre del Nuevo Itinerario:</label>
                 <input type="text" id="new_itinerary_name" name="itinerary_name">
                 <?php wp_nonce_field('tic_create_itinerary_nonce', 'nonce'); ?>
-                <button type="button" id="tic-create-itinerary-btn" class="button button-primary">Crear Itinerario</button>
+                <button type="button" id="tic-create-itinerary-btn" class="tic-button">Crear Itinerario</button>
                 <input type="hidden" id="current_itinerary_id" name="current_itinerary_id" value="0">
             </form>
         </div>
